@@ -1,6 +1,17 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+import Header from './header/Header';
+import CharactersList from './charactersList/CharactersList';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <Router>
+      <Header />
+      <CharactersList />
+    </Router>
+  ) ;
 }
-  
