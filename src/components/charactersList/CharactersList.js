@@ -7,21 +7,24 @@ const CharactersList = () => {
   const { charactersArray, page, handlePageChange } = useCharacters();
 
   return (
-    <div className={styles.CharactersArray}>
-      { charactersArray.length ? 
-        charactersArray.map(({ name, image, id }) => { 
-          return <div key={id} >
-            <Link to={`/character/${id}`} >
-              <h2>{name}</h2>
-              <img src={image}/>
-            </Link>
-          </div>;}) : null
-      }
-      <div>
-        <button value='prev' onClick={({ target }) => handlePageChange(target.value)}>Previous</button>
-        <p>{page}</p>
+    <div className={styles.CharactersList}>
+      <div className='pagination'>
+        <button value='prev' onClick={({ target }) => handlePageChange(target.value)}>Prev</button>
+        <span> Page {page} </span>
         <button value='next' onClick={({ target }) => handlePageChange(target.value)}>Next</button>
       </div>
+      <ul>
+        { charactersArray.length ? 
+          charactersArray.map(({ name, image, id }) => { 
+            return <li key={id} >
+              <Link to={`/character/${id}`} >
+                <h2>{name}</h2>
+                <img src={image}/>
+              </Link>
+            </li>;}) : null
+        }
+      </ul>
+
     </div>
   );
 };
