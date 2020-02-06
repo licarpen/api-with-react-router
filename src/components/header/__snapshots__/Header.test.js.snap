@@ -7,12 +7,6 @@ exports[`Header component matches a snapshot 1`] = `
   <h1>
     Ryan and Marty Characters
   </h1>
-  <nav>
-    <Link
-      to="/"
-    >
-      Back to List
-    </Link>
-  </nav>
+  <nav />
 </header>
 `;
