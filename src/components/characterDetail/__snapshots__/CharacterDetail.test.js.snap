@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CharacterDetail component matches a snapshot 1`] = `
-<div>
+<div
+  className="CharacterDetail"
+>
   <h1 />
+  <img />
+  <ul>
+    <li>
+      Species: 
+    </li>
+    <li>
+      Status: 
+    </li>
+    <li>
+      Gender: 
+    </li>
+  </ul>
 </div>
 `;

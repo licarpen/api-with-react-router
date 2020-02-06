@@ -4,7 +4,9 @@ import CharacterDetail from './CharacterDetail';
 
 describe('CharacterDetail component', () => {
   it('matches a snapshot', () => {
-    const wrapper = shallow(<CharacterDetail />);
+    const wrapper = shallow(<CharacterDetail match={{ params: {
+      id: '1'
+    } }}/>);
     expect(wrapper).toMatchSnapshot();
   });
 });

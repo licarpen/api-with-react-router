@@ -2,18 +2,22 @@
 
 exports[`CharactersList component matches a snapshot 1`] = `
 <div
-  className="CharactersArray"
+  className="CharactersList"
 >
-  <div>
+  <div
+    className="pagination"
+  >
     <button
       onClick={[Function]}
       value="prev"
     >
-      Previous
+      Prev
     </button>
-    <p>
+    <span>
+       Page 
       1
-    </p>
+       
+    </span>
     <button
       onClick={[Function]}
       value="next"
@@ -21,5 +25,6 @@ exports[`CharactersList component matches a snapshot 1`] = `
       Next
     </button>
   </div>
+  <ul />
 </div>
 `;
