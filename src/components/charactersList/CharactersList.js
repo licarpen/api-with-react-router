@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './CharactersList.css';
 import { useCharacters } from '../../hooks/charactersList';
+import { Link } from 'react-router-dom';
 
 const CharactersList = () => {
   const { charactersArray, page, handlePageChange } = useCharacters();
@@ -8,10 +9,12 @@ const CharactersList = () => {
   return (
     <div className={styles.CharactersArray}>
       { charactersArray.length ? 
-        charactersArray.map(({ name, image }) => { 
-          return <div key={image}>
-            <h2>{name}</h2>
-            <img src={image}/>
+        charactersArray.map(({ name, image, id }) => { 
+          return <div key={id} >
+            <Link to={`/character/${id}`} >
+              <h2>{name}</h2>
+              <img src={image}/>
+            </Link>
           </div>;}) : null
       }
       <div>

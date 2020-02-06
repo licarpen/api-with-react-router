@@ -1,17 +1,18 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route,
-  Switch
+  Route
 } from 'react-router-dom';
 import Header from './header/Header';
 import CharactersList from './charactersList/CharactersList';
+import CharacterDetail from './characterDetail/CharacterDetail';
 
 export default function App() {
   return (
     <Router>
-      <Header />
-      <CharactersList />
+      <Route path="/" component = {Header} />
+      <Route exact path="/" component={CharactersList} />
+      <Route path="/character/:id" component = {CharacterDetail} />
     </Router>
-  ) ;
+  );
 }

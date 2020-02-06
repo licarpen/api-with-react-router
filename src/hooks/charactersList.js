@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { getCharacters } from '../services/apiFetch';
+import { getCharacters, getCharacter } from '../services/apiFetch';
 
 export const useCharacters = () => {
   const [charactersArray, setCharactersArray] = useState([]);
   const [page, setPage] = useState(1);
-
+  
   useEffect(() => {
     getCharacters(page)
       .then(characters => setCharactersArray(characters.results));
@@ -23,4 +23,15 @@ export const useCharacters = () => {
   };
 
   return { charactersArray, page, handlePageChange };
+};
+
+export const useCharacter = id => {
+  const [selectedCharacter, setSelectedCharacter] = useState({});
+  
+  useEffect(() => {
+    getCharacter(id)
+      .then(character => setSelectedCharacter(character));
+  }, [id]);
+
+  return { selectedCharacter };
 };
