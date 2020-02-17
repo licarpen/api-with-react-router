@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component matches a snapshot 1`] = `
+<header
+  className="Header"
+>
+  <h1>
+    Ryan and Marty Characters
+  </h1>
+  <nav />
+</header>
+`;
